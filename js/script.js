@@ -1,4 +1,4 @@
-// the arrays work perfectly
+// the array is written as explained in the assignment
 const quotes = [ {
   quote: "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.",
   source: 'Albert Einstein',
@@ -45,7 +45,7 @@ const quotes = [ {
   ];
 
 /***
- No problems here
+ A function to generate a random quote
 ***/
 function getRandomQuote(array) {
   var quoteIndex = Math.floor(Math.random() * (quotes.length));
@@ -57,7 +57,7 @@ function getRandomQuote(array) {
 
 
 /***
- No problems with the color changer
+Here's the color changer
 ***/
 let colors = [
   {
@@ -94,7 +94,7 @@ let colors = [
   }
 ];
 
-//timer function works
+//the timer function starts here
 let timer;
 
 function getRandomQuote() {
@@ -118,7 +118,7 @@ function clearTimer() {
   clearInterval(timer);
 }
 
-//printQuote works and has a closing p tag on line 138
+//A function that prints the citation and year and has a closing p tag on line 138
 function printQuote() {
 
   let currentQuote = getRandomQuote();
@@ -143,6 +143,7 @@ function printQuote() {
  
   clearTimer();
   startTimer();
+  //timer function ends
 }
 
 printQuote();
