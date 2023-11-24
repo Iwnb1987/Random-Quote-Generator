@@ -1,4 +1,4 @@
-// the array is written as explained in the assignment
+// An array that contains random quotes
 const quotes = [ {
   quote: "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.",
   source: 'Albert Einstein',
@@ -44,9 +44,7 @@ const quotes = [ {
 
   ];
 
-/***
- A function to generate a random quote
-***/
+// A function that loops through the random quotes
 function getRandomQuote(array) {
   var quoteIndex = Math.floor(Math.random() * (quotes.length));
   for (var i = 0; i < array.length; i++) {
@@ -56,9 +54,7 @@ function getRandomQuote(array) {
 }
 
 
-/***
-Here's the color changer
-***/
+// A color generator that changes the color of the page each tim a new quote prints
 let colors = [
   {
       background: "#00adb5", 
@@ -94,7 +90,7 @@ let colors = [
   }
 ];
 
-//the timer function starts here
+// A lengthy timer function that refreshes the page every ten seconds
 let timer;
 
 function getRandomQuote() {
@@ -118,7 +114,7 @@ function clearTimer() {
   clearInterval(timer);
 }
 
-//A function that prints the citation and year and has a closing p tag on line 138
+//This function prints out the source, citation, and year contained in the array
 function printQuote() {
 
   let currentQuote = getRandomQuote();
@@ -143,15 +139,9 @@ function printQuote() {
  
   clearTimer();
   startTimer();
-  //timer function ends
+  //timer function end
 }
 
 printQuote();
-
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
