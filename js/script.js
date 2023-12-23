@@ -54,7 +54,7 @@ function getRandomQuote(array) {
 }
 
 
-// A color generator that changes the color of the page each tim a new quote prints
+// A color generator that changes the color of the page each time a new quote prints
 let colors = [
   {
       background: "#00adb5", 
