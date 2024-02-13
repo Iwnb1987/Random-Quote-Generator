@@ -1,3 +1,4 @@
+//An array of quotes to be manipulated in various ways throughout this project
 const quotes = [ {
   quote: "The only reason for time is so that everything doesn't happen at once.",
   source: 'Albert Einstein',
@@ -115,29 +116,31 @@ function printQuote () {
   ];
   
 
-let timer; //refreshes the page every ten seconds
 
-function generateQuote() {
-return quotes[(Math.floor(Math.random() * quotes.length))];
-}
+ let timer; //refreshes the page every ten seconds
+
+ function generateQuote() {
+ return quotes[(Math.floor(Math.random() * quotes.length))];
+  }
 
 function generateColor() {
 return colors[(Math.floor(Math.random() * colors.length))];
-}
+  }
 
 function startTimer() {
   timer = setInterval(printQuote, 10000);
-}
+  }
+
 
 function clearTimer() {
   clearInterval(timer);
-}
+  }
  
   clearTimer();
   startTimer();
   //timer function end
 
- printQuote();                         //listens for a the 'show another quote' button click
+  printQuote();
   document.getElementById('load-quote').addEventListener("click", () => {
     //might add something here later.
-  });
+      });
