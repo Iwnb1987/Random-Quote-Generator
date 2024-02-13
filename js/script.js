@@ -142,7 +142,6 @@ function clearTimer() {
   //timer function end
 
 //calling the printQuote function
-  printQuote();                        //listens for 'show another quote' button clicks
-  document.getElementById('load-quote').addEventListener("click", () => {
-    //might add something here later.
-      });
+ printQuote();                        //listens for 'show another quote' button clicks
+  document.getElementById('load-quote').addEventListener("click", printQuote());
+  //document.getElementById('load-quote').addEvetListener("click", () => {});
