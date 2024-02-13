@@ -1,147 +1,143 @@
-// An array that contains random quotes
 const quotes = [ {
-  quote: "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.",
+  quote: "The only reason for time is so that everything doesn't happen at once.",
   source: 'Albert Einstein',
-  citation: '@Goodreads',
-  year: '1911'
+  citation: '@BrainyQuotes',
+  year: '1912'
   },
-
-  {
-  quote: "Logic will get you from A to Z; imagination will get you everywhere.",
+    {
+  quote: "A person who never made a mistake never tried anything new.",
   source: 'Albert Einstein ',
-  citation: '@Goodreads',
-  year: '1915'
-  },
-
-  {
-  quote: "Anyone who has never made a mistake has never tried anything new.",
-  source: 'Albert Einstein',
-  citation: '@Goodreads',
-  year: '1919'
-  },
-
-  {
-  quote: "Never memorize something that you can look up.",
-  source: 'Albert Einstein',
-  citation: '@Goodreads',
+  citation: '@Reader\'s Digest',
   year: '1913'
   },
-
-  {
-  quote: "A clever person solves a problem. A wise person avoids it.",
+    {
+  quote: "Work hard in silence, let your success be your noise.",
+  source: 'Anonymous'
+  },
+    {
+  quote: "Never memorize something that you can look up.",
   source: 'Albert Einstein',
-  citation: '@Goodreads',
-  year: '1911'
+  year: '1914'
   },
-
-  {
-    quote: "Laughter has the power to heal wounds, both physical and emotional..",
+    {
+  quote: "The greatest pleasure in life is doing what people say you can't do.",
+  source: 'Walter Bagehot'
+  },
+    {
+    quote: "Laughter has the power to heal wounds, both physical and emotional.",
     source: 'Takeshi Kitano',
-    citation: '@Goodreads',
     year: '2020'
+    },
+      {     
+      quote: "Never give up on a dream just because of the time it will take to accomplish it. The time will pass anyway.",
+      source: 'Earl Nightingale'
+    },
+      {    
+  quote: "A river cuts through rock, not because of its power, but because of its persistence.",
+  source: 'Jim Watkins'
+  },
+    {  
+  quote: "Success is achieved twice. Once in the mind and the second time in the real world.",
+  source: 'Azim Premji',
+  year: '2024'
+  },
+    {   //10
+  quote: "Life is really simple, but we insist on making it complicated.",
+  source: 'Confucius',
+  Description: '- Philosopher'
+  },
+    {
+  quote: "Preparation for tomorrow is hard work today.",
+  source: 'Bruce Lee',
+  Description: '- Movie Star'
     }
+      ];
+
+     
+
+// A function loop that controls which random quote generates
+function generateQuote(array) {
+const quoteIndex = Math.floor(Math.random() * 12); //manipulates(line 2 const) & returns array index values 0-11
+  for (let i = 0; i < array.length; i++) {
+       return array[quoteIndex];
+    }
+    };
+
+function printQuote () {
+  let thisQuote = generateQuote();
+  let html = newFunction(); 
+  if ("citation" in thisQuote) {
+          html += `<span class='citation'> ${thisQuote.citation}</span>`;
+      }
+    
+      if ("year" in thisQuote) {
+          html += `<span class='year'> ${thisQuote.year}</span>`;
+      }
+
+      if ("Description" in thisQuote) {
+        html += `<span class='Description'> ${thisQuote.Description}</span>`
+      }
+    
+      "</p>"
+      document.getElementById("quote-box").innerHTML = html;
+      document.body.style.background = (generateColor()).background;
+
+  function newFunction() {
+    let html = `<p class='quote'> ${thisQuote.quote}</p>`;
+    html += `<p class='source'> ${thisQuote.source}`;
+    return html;
+    }
+     };
 
 
+     let colors = [
+    {
+      background: "#00FFFF" //aqua
+     },
+    {
+    background: "#6A5ACD" //slate blue
+    },
+    {
+    background: "#4169E1" //royal blue
+    }, 
+    {
+    background: "#5F9EA0" //cadet blue
+    },
+    {
+    background: "#DC143C" //crimson
+    },
+    {
+    background: "#9932CC" //dark orchid
+    },
+    {
+    background: "#FF00FF" //fuchsia
+    }
   ];
+  
 
-// A function that loops through the random quotes
-function getRandomQuote(array) {
-  var quoteIndex = Math.floor(Math.random() * (quotes.length));
-  for (var i = 0; i < array.length; i++) {
-      var randomQuote = array[quoteIndex];
-  }
-  return randomQuote;
+let timer; //refreshes the page every ten seconds
+
+function generateQuote() {
+return quotes[(Math.floor(Math.random() * quotes.length))];
 }
 
-
-// A color generator that changes the color of the page each time a new quote prints
-let colors = [
-  {
-      background: "#00adb5", 
-      button: "#393e46"
-  },
-  {
-      background: "#6639a6", 
-      button: "#521262"
-  },
-  {
-      background: "#3f72af", 
-      button: "#112d4e"
-  },
-  {
-      background: "#f95959", 
-      button: "#455d7a"
-  },
-  {
-      background: "#a3de83", 
-      button: "#2eb872"
-  },
-  {
-      background: "#118df0", 
-      button: "#0e2f56"
-  },
-  {
-      background: "#ff5722", 
-      button: "#393e46"
-  },
-  {
-      background: "#3fc1c9", 
-      button: "#fc5185"
-  }
-];
-
-// A lengthy timer function that refreshes the page every ten seconds
-let timer;
-
-function getRandomQuote() {
-  let randomQuote = Math.floor(Math.random() * quotes.length);
-
-  return quotes[randomQuote];
-}
-
-function getRandomColor() {
-  let randomColor = Math.floor(Math.random() * colors.length);
-
-  return colors[randomColor];
+function generateColor() {
+return colors[(Math.floor(Math.random() * colors.length))];
 }
 
 function startTimer() {
   timer = setInterval(printQuote, 10000);
 }
 
-
 function clearTimer() {
   clearInterval(timer);
 }
-
-//This function prints out the source, citation, and year contained in the array
-function printQuote() {
-
-  let currentQuote = getRandomQuote();
-  let currentColor = getRandomColor();
-  let html = "<p class='quote'> " + currentQuote.quote + "</p>";
-  html += "<p class='source'> " + currentQuote.source;
-
-  if ("citation" in currentQuote) {
-      html += "<span class='citation'> " + currentQuote.citation + "</span>";
-  }
-
-  if ("year" in currentQuote) {
-      html += "<span class='year'> " + currentQuote.year + "</span>";
-  }
-
-  "</p>"
-
-  document.getElementById("quote-box").innerHTML = html;
-  document.body.style.background = currentColor.background;
- 
-
  
   clearTimer();
   startTimer();
   //timer function end
-}
 
-printQuote();
-
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+ printQuote();                         //listens for a the 'show another quote' button click
+  document.getElementById('load-quote').addEventListener("click", () => {
+    //might add something here later.
+  });
