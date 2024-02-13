@@ -56,14 +56,15 @@ const quotes = [ {
 
      
 
-// A function loop that controls which random quote generates
+// A loop that controls which quote generates randomly
 function generateQuote(array) {
-const quoteIndex = Math.floor(Math.random() * 12); //manipulates(line 2 const) & returns array index values 0-11
+const quoteIndex = Math.floor(Math.random() * 12); //manipulates const on line 2 & returns array index values 0-11
   for (let i = 0; i < array.length; i++) {
        return array[quoteIndex];
     }
     };
 
+//this randomly selects which quote will appear when you click 'show another quote'
 function printQuote () {
   let thisQuote = generateQuote();
   let html = newFunction(); 
@@ -90,7 +91,7 @@ function printQuote () {
     }
      };
 
-
+//the colors array for the page, all colors are labeled
      let colors = [
     {
       background: "#00FFFF" //aqua
@@ -116,8 +117,8 @@ function printQuote () {
   ];
   
 
-
- let timer; //refreshes the page every ten seconds
+//a ten second reload timer, the color is picked at random
+ let timer; 
 
  function generateQuote() {
  return quotes[(Math.floor(Math.random() * quotes.length))];
@@ -140,7 +141,8 @@ function clearTimer() {
   startTimer();
   //timer function end
 
-  printQuote();
+//calling the printQuote function
+  printQuote();                        //listens for 'show another quote' button clicks
   document.getElementById('load-quote').addEventListener("click", () => {
     //might add something here later.
       });
