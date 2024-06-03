@@ -117,7 +117,7 @@ function printQuote () {
   ];
   
 
-//a ten second reload timer, the color is picked at random
+//reloads the page every ten seconds
  let timer; 
 
  function generateQuote() {
